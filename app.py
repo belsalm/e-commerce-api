@@ -47,6 +47,7 @@ def get_product_details(product_id):
         })
     return jsonify({"message": "Product not found"}), 404 
 
+
 @app.route("/products/update/<int:product_id>", methods=["PUT"])
 def update_product(product_id):
     product = Product.query.get(product_id)
@@ -65,6 +66,7 @@ def update_product(product_id):
         
     db.session.commit()
     return jsonify({"message": "Product updated successfully"})
+
 
 @app.route("/products", methods=["GET"])
 def get_products():
